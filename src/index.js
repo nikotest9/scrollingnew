@@ -8,12 +8,24 @@ import Stickyfill from 'stickyfilljs';
 
 const container = d3.select('#scrolly-side');
 const stepSel = container.selectAll('.step');
+const imgSel = container.selectAll('.images');
 
 function updateChart(index) {
 	const sel = container.select(`[data-index='${index}']`);
-	const width = sel.attr('data-width');
-	stepSel.classed('is-active', (d, i) => i === index);
-	container.select('.bar-inner').style('width', width);
+  stepSel.classed('is-active', (d, i) => i === index);
+	imgSel.classed('is-active', (d, i) => i === index);
+
+
+    // d3.select("#firstimg")
+    // .transition()
+    // .duration(750)
+    // .style("opacity", 0)
+    // .transition()
+    // .remove();
+
+
+
+
 }
 
 function init() {
